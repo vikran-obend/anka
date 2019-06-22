@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import requests
 import django_heroku
 
 
@@ -78,12 +79,8 @@ WSGI_APPLICATION = "gettingstarted.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE" : "django.db.backends.postgresql",
-        "NAME": 'gaknvlew',
-        'USER': 'gaknvlew',
-        'PASSWORD': 'T9J60gpM_62m3USIPVQXB-8z8k-5qyHe',
-        'HOST': 'rogue.db.elephantsql.com',
-        'PORT': '5432',
+        "ENGINE" : "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
     }
 }
 
@@ -117,7 +114,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "/static/"
 
 django_heroku.settings(locals())

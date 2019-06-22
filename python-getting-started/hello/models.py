@@ -17,11 +17,3 @@ class News(models.Model):
 
     def __int__(self):
         return self.news_number
-
-
-class New(models.Model):
-    name=models.CharField(max_length=25)
-
-
-    def __str__(self):
-        return self.name
